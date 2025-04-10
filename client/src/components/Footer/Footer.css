@@ -1,0 +1,126 @@
+.home-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.home-footer-top {
+    margin-bottom: 20px;
+}
+
+.home-footer-join {
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.home-footer-join h3 {
+    font-size: 20px;
+}
+
+.home-footer-buttons {
+    margin-top: 10px;
+}
+
+.home-btn-signin {
+    background-color: #000000;
+    border: 2px solid greenyellow;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.home-btn-signup {
+    background-color: #00ff00;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.home-btn-signup {
+    background-color: #1aff00;
+}
+
+.home-footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.home-footer-links h4 {
+    margin-bottom: 10px;
+}
+
+.home-footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.home-footer-links li {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.home-footer-social {
+    margin-top: 10px;
+}
+
+.home-social-icons a {
+    color: #00ff00;
+    margin-right: 10px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+
+.home-footer-middle {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.home-footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-footer-bottom p {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    font-size: 0.7rem;
+    gap: 10px;
+
+    strong {
+        font-size: 1.5rem;
+    }
+}
+
+.home-footer-download .home-btn-appstore,
+.home-btn-googleplay {
+    background-color: #00ff00;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}

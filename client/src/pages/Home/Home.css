@@ -1,0 +1,439 @@
+/* Header styles */
+.home-hero {
+    padding: 150px;
+    background: url('https://media.gettyimages.com/id/1165313649/photo/car-mechanic-handshakes-customer.jpg?s=1024x1024&w=gi&k=20&c=WXeonCLZK1k6598R1eyKsVT44gi3HceqwLcrzuD0kSw=') no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.home-learn-about {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 72px;
+    font-weight: 700px;
+    margin: 20px 0;
+}
+
+.home-search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    margin: 0;
+    width: fit-content;
+    border: 2px solid greenyellow;
+    border-radius: 50px;
+    gap: 10px;
+}
+
+.home-location {
+    display: flex;
+    font-size: small;
+    justify-content: space-between;
+    width: 110px;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    padding-right: 0px;
+    border: 2px solid greenyellow;
+    border-radius: 50px;
+}
+
+.home-location-icon {
+    height: 20px;
+    width: 20px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    display: inline;
+}
+
+.home-location-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-location select {
+    padding: 0;
+    font-size: small;
+    background-color: #00000000;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    transform: translateX(-1px);
+    appearance: none;
+}
+
+.home-search-bar input {
+    padding: 10px;
+    width: 500px;
+    border-radius: 50px;
+}
+
+.home-search-button {
+    height: 35px;
+    width: 35px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Service Cards styles */
+.home-service-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 20px;
+    background-color: #f8f8f8;
+}
+
+.home-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+    background: #f5fff4;
+    border-radius: 30px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.053);
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.home-card:hover {
+    background-color: #b7ffb0;
+}
+
+.home-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-card-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 7px;
+}
+
+.home-card-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 0;
+    padding: 0;
+    margin-left: 30px;
+}
+
+.home-btn {
+    display: inline-block;
+    background-color: greenyellow;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+    margin-bottom: 13px;
+    margin-left: 20px;
+}
+
+.home-btn:hover {
+    background-color: #28a828;
+}
+
+.home-card-image img {
+    max-width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Features Section styles */
+.home-features-section {
+    padding: 40px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.home-features-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.home-features-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.home-features {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 120px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.home-feature {
+    background: #f9f9f9;
+    border-radius: 50px;
+    width: fill;
+    padding: 20px;
+    text-align: center;
+}
+
+.home-feature img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.home-feature h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.home-feature p {
+    font-size: 1rem;
+    color: #555;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.home-quick-video-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.home-video-thumbnail img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.home-video-content {
+    text-align: left;
+}
+
+.home-video-content h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.home-video-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.home-video-title {
+    font-weight: bold;
+    color: #000;
+}
+
+.home-view-more-btn {
+    display: inline-block;
+    background-color: greenyellow;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.home-view-more-btn:hover {
+    background-color: #28a828;
+}
+
+/* Stats and Luck Section styles */
+.home-stats-luck-section {
+    padding: 100px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.home-stats-luck-section h2 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700px;
+    margin-bottom: 30px;
+}
+
+.home-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.home-stat {
+    width: 200px;
+}
+
+.home-stat h3 {
+    font-size: 4rem;
+    color: #000;
+    padding: 0;
+    margin: 0;
+}
+
+.home-stat p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+.home-luck-checker {
+    display: flex;
+    align-items: space-between;
+    gap: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.home-luck-placeholder {
+    width: 50%;
+    height: 400px;
+    background: #fff;
+    border: 1px dashed #ccc;
+    border-radius: 30px;
+}
+
+.home-luck-content {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home-luck-content h3 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.home-luck-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.home-check-now-btn {
+    background-color: greenyellow;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+.home-check-now-btn:hover {
+    background-color: #28a828;
+}
+
+/* Review styles */
+.home-review {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.home-review-content {
+    background-color: #e5e7fe;
+    border-radius: 30px;
+    padding-top: 20px;
+    padding: 40px;
+}
+
+.home-review-content-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #303030;
+}
+
+.home-review-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.home-review-content p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.home-review-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.home-review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.053);
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.home-review-card-image {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border: 3px solid greenyellow;
+    padding: 4px;
+    border-radius: 20px;
+}
+
+.home-review-card-username {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-review-card-username p {
+    font-size: 0.5rem;
+    color: #555;
+    padding: 0;
+    margin: 0;
+}
+
+.home-review-card-username hr {
+    width: 100%;
+    background-color: greenyellow;
+    margin: 0;
+}
