@@ -1,26 +1,93 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { IoSearch } from "react-icons/io5";
 import { MdLocationPin } from "react-icons/md";
-import { IoIosNotifications } from "react-icons/io";
+import { IoMdNotificationsOutline } from "react-icons/io";
 import { AiOutlineGlobal } from "react-icons/ai";
-import { CiCirclePlus } from "react-icons/ci";
-
+import { MdPersonAdd } from "react-icons/md";
+import { GiHamburgerMenu } from "react-icons/gi";
+import Sidebar from "../Sidebar/Sidebar";
+// import Login from "../Login/Email_Login";
+import Cookies from "js-cookie";
+import Profile from "../../pages/Profile/Profile";
+import axios from "axios";
+import { useUser } from "../../context/UserContext";
 function NavBar() {
-  const [showLogin, setShowLogin] = useState(false);
+  const navigate = useNavigate();
+  const { user, loading, isAuthenticated } = useUser();
+  const profileRef = useRef(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setShowUser(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+  const [showUser, setShowUser] = useState(false);
   const [mail, setMail] = useState("");
   const location = useLocation();
   const [activeSegment, setActiveSegment] = useState(null);
-  const navigate = useNavigate();
+  const [activePopup, setActivePopup] = useState("");
 
-  // Support Component State/Logic
-  // No state needed for Support component
+  useEffect(() => {
+    const handleOpenLoginPopup = () => {
+      setActivePopup("login");
+      document.body.classList.add("login-active");
+    };
 
-  // Notification Component State/Logic
-  // No state needed for Notification component
+    // Add event listener for the custom event
+    window.addEventListener("openLoginPopup", handleOpenLoginPopup);
 
-  // Language Component State/Logic
+    return () => {
+      // Cleanup the event listener
+      window.removeEventListener("openLoginPopup", handleOpenLoginPopup);
+    };
+  }, []);
+
+  useEffect(() => {
+    const checkHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      setActivePopup(hash);
+      if (hash === "login") {
+        document.body.classList.add("login-active");
+      } else {
+        document.body.classList.remove("login-active");
+      }
+    };
+
+    checkHash();
+    window.addEventListener("hashchange", checkHash);
+
+    return () => {
+      window.removeEventListener("hashchange", checkHash);
+      document.body.classList.remove("login-active");
+    };
+  }, []);
+
+  const handleLoginClick = () => {
+    window.location.hash = "login";
+    document.body.classList.add("login-active");
+  };
+
+  const handleProfileClick = () => {
+    <Profile />;
+  };
+
+  const handleClosePopup = () => {
+    window.location.hash = "";
+    document.body.classList.remove("login-active");
+    navigate(location.pathname, { replace: true });
+  };
+
   const languages = [
     { value: "english", label: "English" },
     { value: "spanish", label: "Spanish" },
@@ -81,21 +148,18 @@ function NavBar() {
     setSearchTerm(language.label); // Set the selected language directly in the input
   };
 
-  // Login Component State/Logic
-  const [showEmailLogin, setShowEmailLogin] = useState(false);
-
-  // NavBar Component Logic
   const handleSegmentChange = (segment) => {
-    setActiveSegment(activeSegment === segment ? null : segment);
+    if (activeSegment === segment) {
+      setActiveSegment(null);
+      navigate(location.pathname, { replace: true }); // Clear the hash
+    } else {
+      setActiveSegment(segment);
+      navigate(`${location.pathname}#${segment}`, { replace: true }); // Update the hash
+    }
   };
 
   const handleLoginStatus = (status) => {
     setMail(status);
-    setShowLogin(false);
-  };
-
-  const handleVerification = () => {
-    setShowLogin(true);
   };
 
   // Support Component
@@ -164,151 +228,156 @@ function NavBar() {
     );
   };
 
-  // Login Component
-  const Login = ({ onClose }) => {
-    return (
-      <div className="login-container">
-        <div className="login-card">
-          {!showEmailLogin ? (
-            <>
-              <h1 className="login-title">Log in to your account</h1>
-              <p className="login-subtitle">Welcome back !!!</p>
-
-              <button className="login-google-btn">
-                <img
-                  src="{googleIcon}"
-                  alt="Google Icon"
-                  className="login-google-icon"
-                />
-                Continue with Google
-              </button>
-
-              <button
-                className="login-email-btn"
-                onClick={() => setShowEmailLogin(true)}
-              >
-                Continue with number/email
-              </button>
-
-              <button className="login-stay-logged-out-btn" onClick={onClose}>
-                Stay Logged Out
-              </button>
-
-              <p className="login-signup-text">
-                Don't have an account?{" "}
-                <a href="/signup" className="login-signup-link">
-                  Sign up
-                </a>
-              </p>
-            </>
-          ) : (
-            <>
-              <h1 className="login-title">Log In</h1>
-              <p className="login-subtitle">
-                Enter your Registered Mobile no or Email
-              </p>
-
-              <form className="login-form">
-                <label className="login-label">Mobile no / Email</label>
-                <input type="text" className="login-input" required />
-
-                <label className="login-label">Password</label>
-                <input type="password" className="login-input" required />
-
-                <button type="submit" className="login-submit-btn">
-                  Log In
-                </button>
-              </form>
-            </>
-          )}
-        </div>
-      </div>
-    );
-  };
-
   return (
-    <div className="header-navbar">
-      <div className="header-navbar-left">
-        <h1 className="header-logo">
-          <Link to="/">AskIT</Link>
-        </h1>
-      </div>
-      {location.pathname !== "/" && (
-        <div className="header-navbar-center">
-          <div className="header-search-wrapper">
-            <div className="header-locat">
-              <div className="header-location">
-                <MdLocationPin />
-                <span>Puducherry</span>
-              </div>
-            </div>
-            <div className="header-search-box">
-              <input type="text" placeholder="Search" />
-              <div className="header-search-but">
-                <button className="header-search-button">
-                  <IoSearch />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+    <>
+      <div className="header-navbar">
+        <div className="header-navbar-left">
+          <h1 onClick={() => navigate("/")} className="header-logo">
+            Ask IT
+          </h1>
+          {/* <div className="header-navbar"> */}
+          {/* <h1 onClick={() => navigate("/")} className="header-logo">
+              Ask IT
+            </h1> */}
 
-      <div className="header-navbar-right">
-        {[
-          { id: "support", label: "Support", component: <Support /> },
-          {
-            id: "notifications",
-            label: (
-              <>
-                <IoIosNotifications /> Notification
-              </>
-            ),
-            component: <Notification />,
-          },
-          {
-            id: "language",
-            label: (
-              <>
-                <AiOutlineGlobal /> English
-              </>
-            ),
-            component: <Language />,
-          },
-        ].map(({ id, label, component }) => (
-          <div
-            key={id}
-            className={`header-nav-item ${
-              activeSegment === id ? "active" : ""
-            }`}
+          {/* ✅ Hamburger only on small screens */}
+          <button
+            className="hamburger-btn"
+            onClick={() => setSidebarOpen(true)}
           >
-            <a onClick={() => handleSegmentChange(id)} href={`#${id}`}>
-              {label}
-            </a>
-            {activeSegment === id && (
-              <div className="header-popup-box">{component}</div>
-            )}
-          </div>
-        ))}
+            <GiHamburgerMenu />
+          </button>
+          {/* </div> */}
 
-        <p className="header-nav-item" onClick={handleVerification}>
-          <CiCirclePlus /> Login
-        </p>
-
-        {showLogin && (
-          <div className="verify-popup-overlay">
-            <Login onClose={() => setShowLogin(false)} />
+          {/* ✅ Sidebar Component */}
+          <Sidebar
+            isAuthenticated={isAuthenticated}
+            user={user}
+            isOpen={sidebarOpen}
+            onClose={() => setSidebarOpen(false)}
+          />
+        </div>
+        {location.pathname !== "/" && (
+          <div className="header-navbar-center">
+            <div className="header-search-wrapper">
+              <div className="header-locat">
+                <div className="header-location">
+                  <MdLocationPin />
+                  <span>Puducherry</span>
+                </div>
+              </div>
+              <div className="header-search-box">
+                <input type="text" placeholder="Search" />
+                <div className="header-search-but">
+                  <button className="header-search-button">
+                    <IoSearch />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         )}
 
-        <button
-          className="header-sign-up"
-          onClick={() => navigate("/Consumer-Signup")}
-        >
-          Sign up
-        </button>
+        <div className="header-navbar-right">
+          {[
+            {
+              id: "support",
+              label: "Support",
+              component: <Support />,
+            },
+            {
+              id: "notifications",
+              label: (
+                <>
+                  <IoMdNotificationsOutline className="btn-icon" />
+                  Notification
+                </>
+              ),
+              component: <Notification />,
+            },
+            {
+              id: "language",
+              label: (
+                <>
+                  <AiOutlineGlobal className="btn-icon" />
+                  English
+                </>
+              ),
+              component: <Language />,
+            },
+          ].map(({ id, label, component }) => (
+            <div
+              key={id}
+              className={`header-nav-item ${
+                activeSegment === id ? "active" : ""
+              }`}
+            >
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleSegmentChange(id);
+                }}
+              >
+                {label}
+              </a>
+              {activeSegment === id && (
+                <div className="header-popup-box">{component}</div>
+              )}
+            </div>
+          ))}
+          {isAuthenticated ? (
+            <>
+              <button
+                className="header-user-profile"
+                // onClick={() => setShowUser((prev) => !prev)}
+                onClick={() => navigate("/profile/manage")}
+              >
+                <div className="header-user-photo">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                    alt="User Profile"
+                    className="header-user-avatar"
+                  />
+                </div>
+                <div className="header-user-right">
+                  {user.name || "Name"}
+                  <hr className="header-user-underline" />
+                  {user.email || "@Venky2342"}
+                </div>
+              </button>
+              {showUser && (
+                <div className="profile-overlay" ref={profileRef}>
+                  <Profile onClose={() => setShowUser(!showUser)} />
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="header-login-signup">
+              <button
+                className={`header-nav-item login-btn`}
+                onClick={() => navigate("/login")}
+              >
+                <MdPersonAdd className="btn-icon" />
+                Sign in
+              </button>
+              {/* {activePopup === "login" && (
+                <div className="verify-popup-overlay">
+                  <Login onClose={handleClosePopup} />
+                </div>
+              )} */}
+
+              <button
+                className="header-nav-item  header-sign-up"
+                onClick={() => navigate("/signup")}
+              >
+                Sign up
+              </button>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

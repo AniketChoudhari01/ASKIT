@@ -1,0 +1,80 @@
+.review-carousel-container {
+    width: 100%;
+    max-width: 400px;
+    /* adjust as needed */
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+}
+
+.review-carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    width: 100%;
+}
+
+.review-card {
+    min-width: 100%;
+    /* full width per slide */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+}
+
+.review-content h3 {
+    margin-bottom: 5px;
+}
+
+.review-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.review-user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Navigation */
+.review-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.review-nav button {
+    border: none;
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Dots */
+.review-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    gap: 5px;
+}
+
+.review-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.review-dots .active {
+    background: #333;
+}

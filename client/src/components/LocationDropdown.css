@@ -165,7 +165,7 @@
 
 .clear-btn {
     position: absolute;
-    right: 8px;
+    right: 2px;
     cursor: pointer;
     background: none;
     border: none;
@@ -175,4 +175,9 @@
 
 .clear-btn:hover {
     color: #000;
+}
+
+.dropdown-container .search-location-input {
+    width: 16rem;
+    border-radius:2rem solid green;
 }

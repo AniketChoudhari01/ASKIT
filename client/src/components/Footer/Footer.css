@@ -1,5 +1,5 @@
 .home-footer {
-    background-color: #000;
+    background: #111;
     color: #fff;
     padding: 40px;
     font-family: Arial, sans-serif;
@@ -7,6 +7,14 @@
 
 .home-footer-top {
     margin-bottom: 20px;
+}
+
+.home-footer-left {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .home-footer-join {
@@ -70,18 +78,83 @@
     padding: 0;
 }
 
+/* .home-footer-links a {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 3px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-footer-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: rgba(75, 195, 255, 0.74);
+    transition: width 0.3s ease-in-out;
+}
+
+.home-footer-links li:hover::after {
+    width: 100%;
+} */
+
 .home-footer-links li {
     font-size: 0.8rem;
     margin-bottom: 5px;
+    padding: 2px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.home-footer-links a {
+    position: relative;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 4px;
+}
+
+.home-footer-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    /* background-color: rgba(75, 195, 255, 0.74); */
+    background-color: #7CE605;
+    transition: width 0.3s ease-in-out;
+}
+
+.home-footer-links a:hover::after {
+    width: 100%;
 }
 
 .home-footer-social {
-    margin-top: 10px;
+    border-radius: 3rem;
+    /* margin-top: 10px; */
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-social-icons {
+    border: 1px solid #7CE605;
+    padding: 0.3rem;
+    padding-bottom: 0;
+    border-radius: 3rem;
 }
 
 .home-social-icons a {
     color: #00ff00;
-    margin-right: 10px;
+    padding-bottom: 0;
+    margin: 0 0.2rem;
     font-size: 24px;
     text-decoration: none;
 }
@@ -99,6 +172,7 @@
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .home-footer-bottom p {
@@ -113,14 +187,125 @@
     }
 }
 
+.home-footer-download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .home-footer-download .home-btn-appstore,
-.home-btn-googleplay {
-    background-color: #00ff00;
-    border: none;
+.home-footer-download .home-btn-googleplay {
+    background-color: black;
     padding: 10px 15px;
+    display: flex;
+    justify-content: flex-start;
+    /* important */
+    align-items: center;
     margin: 5px;
-    border-radius: 5px;
-    color: #000;
+    border: 1px solid #7CE605;
+    color: #fffafa;
+    border-radius: 3rem;
     font-weight: bold;
     cursor: pointer;
+    width: 180px;
+    /* Adjust as needed */
+    text-align: left;
+}
+
+/* Flex container for icon + text */
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+/* Icon styling */
+.btn-icon {
+    background: #7CE605;
+    color: black;
+    font-size: 24px;
+    border-radius: 10rem;
+    padding: 0.1rem;
+    flex-shrink: 0;
+}
+
+/* Text styling */
+.btn-text {
+    display: inline-block;
+    white-space: normal;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.home-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    /* Push left & right to edges */
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background: #111;
+    /* or your footer background */
+    color: #fff;
+    flex-wrap: wrap;
+    /* stack on small screens */
+}
+
+.home-footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-brand {
+    font-size: 1.2rem;
+}
+
+.home-footer-left .copy-text {
+    margin-top: 2px;
+    font-size: 0.9rem;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+}
+
+/* App buttons layout */
+.home-footer-download {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.home-footer-social {
+    display: flex;
+    width: 100%;
+}
+
+@media (max-width:426px) {
+    .home-footer-social {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .home-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .copyright-btm {
+        display: flex;
+        width: 10rem;
+        flex-direction: column;
+    }
+
+    .home-footer-bottom .copy-text {
+        width: 100%;
+    }
+
 }

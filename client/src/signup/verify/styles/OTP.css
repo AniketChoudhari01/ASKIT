@@ -1,0 +1,165 @@
+.verify-app-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.verify-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #707070cb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.verify-otp-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.verify-otp-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.verify-otp-instruction {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.verify-otp-phone-number {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.verify-otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.verify-otp-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.verify-otp-input:focus {
+    border-color: #4285f4;
+    box-shadow: 0 0 5px rgba(66, 133, 244, 0.5);
+}
+
+.verify-otp-resend {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.verify-otp-timer {
+    color: #4285f4;
+    font-weight: bold;
+}
+
+.verify-otp-notification {
+    font-size: 12px;
+    color: #777;
+}
+
+/* otp close style */
+.verify-otp-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.verify-otp-close-btn:hover {
+    color: #000;
+}
+
+.popup-fade {
+    animation: fadeIn 0.3s ease-in-out;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.verify-otp-footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    align-items: center;
+}
+
+.verify-otp-footer .back-btn,
+.verify-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.back-verify-btn {
+    display: flex;
+    gap: 1rem;
+}
+
+.verify-otp-footer .back-btn {
+    background-color: white;
+    border: 2px solid #666;
+}
+
+.verify-otp-footer .verify-btn {
+    background-color: #00ff00;
+    border: 2px solid #666;
+}
+
+.resend-active {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.resend-disabled {
+    cursor: not-allowed;
+    color: grey;
+    pointer-events: none;
+}
+
+.verify-otp-container .otp-error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}

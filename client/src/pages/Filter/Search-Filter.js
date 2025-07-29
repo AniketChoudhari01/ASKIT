@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "../../components/card";
 import "./Search-Filter.css";
 import LocationDropdown from "../../components/location_dropdown";
-import { UserContext } from "../../context/UserContext";
-
+import { useUser } from "../../context/UserContext";
+import axios from "axios";
 export const Filter = () => {
   const [allData, setAllData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [search, setSearch] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
   const [isVerified, setIsVerified] = useState(null);
-  const { user } = useContext(UserContext);
+  const { user } = useUser();
 
   // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,16 +19,18 @@ export const Filter = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/serviceProviders");
-        const data = await response.json();
+        const response = await axios(
+          `${process.env.REACT_APP_SERVER_URL}/serviceProviders`
+        );
+        const data = await response.data;
         if (!Array.isArray(data)) {
-          console.error("Unexpected API response:", data);
+          // console.error("Unexpected API response:", data);
           return;
         }
         setAllData(data);
         setFilteredData(data);
       } catch (error) {
-        console.log("Error fetching data", error);
+        // console.log("Error fetching data", error);
       }
     };
     fetchData();
@@ -47,27 +49,27 @@ export const Filter = () => {
     try {
       const queryParams = new URLSearchParams({
         search: search || "",
-        location: selectedLocation?.name || "",
+        locationCovered: selectedLocation?.name || "",
         lat: selectedLocation?.lat || "",
         lon: selectedLocation?.lon || "",
         isVerified: isVerified !== null ? isVerified : "",
         id: user?._id || "",
       }).toString();
 
-      const response = await fetch(
-        `http://localhost:5000/queryServiceProviders?${queryParams}`
+      const response = await axios(
+        `${process.env.REACT_APP_SERVER_URL}/queryServiceProviders?${queryParams}`
       );
-      const data = await response.json();
+      const data = await response.data;
 
       if (!Array.isArray(data)) {
-        console.error("Unexpected API response:", data);
+        // console.error("Unexpected API response:", data);
         return;
       }
 
       setFilteredData(data);
       setCurrentPage(1); // Reset to first page when filters change
     } catch (error) {
-      console.log("Error fetching filtered data:", error);
+      // console.error("Error fetching filtered data:", error);
     }
   };
 
@@ -89,20 +91,16 @@ export const Filter = () => {
   const goToPreviousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
-      // Scroll to top of results when changing page
-      document
-        .querySelector(".user-results")
-        .scrollIntoView({ behavior: "smooth" });
+      // Scroll to the top of the page when changing page
+      window.scrollTo({ top: 4, behavior: "smooth" });
     }
   };
 
   const goToNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
-      // Scroll to top of results when changing page
-      document
-        .querySelector(".user-results")
-        .scrollIntoView({ behavior: "smooth" });
+      // Scroll to the top of the page when changing page
+      window.scrollTo({ top: 4, behavior: "smooth" });
     }
   };
 

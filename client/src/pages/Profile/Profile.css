@@ -1,0 +1,173 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.profile {
+    width: 25rem;
+    background: #fff;
+    color: #1b1b1b;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* margin: 4rem auto; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: right;
+    padding: 1rem;
+}
+
+.profile-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 20vh;
+    margin-bottom: 1rem;
+}
+
+.profile-top .left {
+    flex-shrink: 0;
+    height: 20vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.profile-top .left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-top .right {
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    padding: 0;
+    width: auto;
+}
+
+.profile-top .right h1 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.profile-top .right p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.2rem;
+    text-align: left;
+}
+
+.profile-middle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-middle .same,
+.profile-top .same {
+    background: #1b1b1b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.profile-top .right .same,
+.profile-middle .profile-list li {
+    color: white;
+    background: #1b1b1b;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 3rem;
+}
+
+.profile-middle .profile-list {
+    background-color: #1b1b1b;
+    border-radius: 3rem;
+    padding: 0.5rem;
+}
+
+.profile-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.profile-list li {
+    flex: 1;
+    margin: 0 0.5rem;
+    text-align: center;
+    background: #1b1b1b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.profile-list-options {
+    width: 100%;
+    background: #333;
+    border-radius: 3rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.profile-list-options li {
+    margin: 0.5rem 0;
+    list-style: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s;
+}
+
+.profile-bottom ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    list-style: none;
+}
+
+.profile-bottom li {
+    font-size: 0.85rem;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+ul li {
+    list-style: none;
+}
+
+/* Icon styling */
+.btn-icon {
+    background: #7CE605;
+    color: black;
+    font-size: 24px;
+    border-radius: 10rem;
+    padding: 0.1rem;
+    flex-shrink: 0;
+}

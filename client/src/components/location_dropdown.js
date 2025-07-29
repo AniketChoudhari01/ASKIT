@@ -1,160 +1,126 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
-import "./LocationDropdown.css"; 
-import { UserContext } from "../context/UserContext";
+import React, { useState, useRef, useEffect } from "react";
+import "./LocationDropdown.css";
+import { useUser } from "../context/UserContext";
+import { FaSearchLocation } from "react-icons/fa";
 
-const LocationDropdown = ({ selectedLocation, setSelectedLocation }) => {
+const LocationDropdown = ({ onLocationSelect, defaultLocation }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
   const dropdownRef = useRef(null);
-  const { user } = useContext(UserContext);
-  const savedLocations =
-    user?.addresses?.map((addr) => ({
-      name: addr.address, // Store the address name
-      lat: addr.location?.coordinates[1], // Latitude (MongoDB stores [lon, lat])
-      lon: addr.location?.coordinates[0], // Longitude
-    })) || [];
-  const [searchQuery, setSearchQuery] = useState(selectedLocation || ""); // Use selectedLocation as default
+  const { user } = useUser();
+
+  // Use saved location from user context if available
+  const savedLocation = user?.address
+    ? {
+        name: user.address.address,
+        coordinates: [
+          user.address.location?.coordinates[0], // lon
+          user.address.location?.coordinates[1], // lat
+        ],
+      }
+    : null;
+
+  const [searchQuery, setSearchQuery] = useState(defaultLocation || "");
   const [suggestions, setSuggestions] = useState([]);
 
+  // Fetch autocomplete suggestions
   useEffect(() => {
-    console.log("saved", savedLocations);
-    // console.log(user);
-    if (searchQuery.length > 2) {
-      fetchAutocompleteResults(searchQuery);
-    } else {
-      setSuggestions([]);
-    }
+    const handler = setTimeout(() => {
+      if (searchQuery.length > 2) {
+        fetchAutocompleteResults(searchQuery);
+      } else {
+        setSuggestions([]);
+      }
+    }, 500); // wait 500ms after user stops typing
+
+    return () => clearTimeout(handler);
   }, [searchQuery]);
 
   const fetchAutocompleteResults = async (query) => {
-    const API_KEY = "pk.954f6caba272da7bd96c00235c5ede8d";
-
-    if (!API_KEY) {
-      console.error("API Key is missing. Check your .env file.");
-      return;
-    }
-
+    const API_KEY = process.env.REACT_APP_LOCATIONIQ_API_KEY;
+    // if (!API_KEY) {
+    //   // console.error("API Key is missing. Check your .env file.");
+    //   return;
+    // }
+    // console.log("new api key is ", API_KEY);
     try {
       const response = await fetch(
-        `https://us1.locationiq.com/v1/autocomplete?key=${API_KEY}&q=${query}&countrycodes=in&limit=5&format=json`
+        // `https://us1.locationiq.com/v1/autocomplete?key=${API_KEY}&q=${query}&countrycodes=in&limit=5&format=json`
+        `https://eu1.locationiq.com/v1/autocomplete?key=${API_KEY}&q=${query}&countrycodes=in&limit=5&format=json`
       );
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status} - ${response.statusText}`);
-      }
-
+      if (!response.ok) throw new Error(`Error: ${response.status}`);
       const data = await response.json();
       setSuggestions(data);
-      console.log(data);
     } catch (error) {
       console.error("Error fetching location suggestions:", error);
     }
   };
 
+  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
-        setIsHovering(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleSelectLocation = (location) => {
-    // console.log("user selected location", location);
-    if (!location || !location.lat || !location.lon) {
-      console.error("Invalid location data:", location);
+  // ✅ When user selects a location (saved or searched)
+  const selectLocation = (locationObj) => {
+    if (!locationObj?.coordinates) {
+      console.error("Invalid location:", locationObj);
       return;
     }
-    setSelectedLocation({
-      name: location.name || "Unknown",
-      lat: location.lat || "N/A",
-      lon: location.lon || "N/A",
-    });
-    setSearchQuery(location.name);
+    setSearchQuery(locationObj.name);
     setIsDropdownOpen(false);
-    setIsHovering(false);
+    setSuggestions([]);
+    onLocationSelect(locationObj); // 🔥 Send location object to parent
   };
 
-  const handleSelectSuggestion = (suggestion) => {
-    //  console.log("Selected suggestion object:", suggestion);
-    setSelectedLocation({
-      name: suggestion.display_name || suggestion.name || "Unknown",
-      lat: suggestion.lat || "N/A",
-      lon: suggestion.lon || "N/A",
-    });
-    //  console.log("Location from dropdown", suggestion.lat, suggestion.lon);
-    setSearchQuery(suggestion.display_name || "");
-    setSuggestions([]);
+  // Handle selecting saved address
+  const handleSelectSaved = () =>
+    savedLocation && selectLocation(savedLocation);
+
+  // Handle selecting from suggestions
+  const handleSelectSuggestion = (sug) => {
+    const locationData = {
+      name: sug.display_name,
+      coordinates: [parseFloat(sug.lon), parseFloat(sug.lat)],
+    };
+    selectLocation(locationData);
   };
 
   const clearSearch = () => {
     setSearchQuery("");
-    setSelectedLocation(""); // Clear the selected location in the parent
     setSuggestions([]);
+    onLocationSelect(null); // clear in parent too
   };
 
   return (
     <div className="dropdown-container" ref={dropdownRef}>
-      <div
-        className="dropdown-button"
-        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-      >
-        {searchQuery || "Select Location"}{" "}
-        <span>{isDropdownOpen ? "▲" : "▼"}</span>
-      </div>
-
+      <input
+        type="text"
+        placeholder="🔍 Search location..."
+        className="search-location-input"
+        value={searchQuery}
+        onChange={(e) => {
+          setSearchQuery(e.target.value);
+          setIsDropdownOpen(true);
+        }}
+        onClick={() => setIsDropdownOpen(true)}
+      />
       {isDropdownOpen && (
         <div className="dropdown-menu">
-          <div
-            className="saved-locations"
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-          >
-            Your Address ›
-          </div>
-
-          {isHovering && savedLocations.length > 0 && (
-            <div
-              className="saved-locations-menu"
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
-              <div className="saved-title">Use your Default Address</div>
-              {savedLocations.map((location, index) => (
-                <div
-                  key={index}
-                  className="saved-item"
-                  onClick={() => handleSelectLocation(location)}
-                >
-                  {location.name}
-                </div>
-              ))}
+          {savedLocation && (
+            <div className="saved-locations" onClick={handleSelectSaved}>
+              Use your saved address ›
             </div>
           )}
-
-          <div className="search-container">
-            <input
-              type="text"
-              placeholder="Search for an address..."
-              className="search-input"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            {searchQuery && (
-              <button className="clear-btn" onClick={clearSearch}>
-                ❌
-              </button>
-            )}
-          </div>
-
           {suggestions.length > 0 && (
             <ul className="suggestions-list">
-              {suggestions.map((item, index) => (
-                <li key={index} onClick={() => handleSelectSuggestion(item)}>
+              {suggestions.map((item, idx) => (
+                <li key={idx} onClick={() => handleSelectSuggestion(item)}>
                   {item.display_name}
                 </li>
               ))}

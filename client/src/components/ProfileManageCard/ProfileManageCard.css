@@ -1,0 +1,29 @@
+/* card image section */
+.card-preview-container {
+    width: 100%;
+    margin: 0.5rem;
+    height:max-content;
+}
+
+.card-header {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.card-image-manage-wrapper img {
+    width: 70%;
+    height: 70%;
+}
+
+/* card media section */
+.card-preview-container .card-media-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+    text-align: center;
+    gap: 1rem;
+}
