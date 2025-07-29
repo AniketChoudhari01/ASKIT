@@ -14,8 +14,9 @@
 
 .header-nav-item {
 	position: relative;
-	padding: 10px 20px;
+	padding: 0.1rem 0.2rem;
 	cursor: pointer;
+	width: max-content;
 	text-align: center;
 	display: flex;
 	align-items: center;
@@ -53,6 +54,7 @@
 .header-login-signup .login-btn {
 	border: 1px solid #7CE605;
 	background-color: black;
+	width: 100%;
 	color: white;
 	border-radius: 3rem;
 }
@@ -203,6 +205,7 @@
 	color: #000;
 	border: none;
 	border-radius: 3rem;
+	width: max-content;
 	padding: 0.3rem 0.7rem;
 	cursor: pointer;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -599,6 +602,14 @@ body.login-active {
 	border-radius: 10rem;
 	padding: 0.1rem;
 	flex-shrink: 0;
+}
+
+/* signup btn */
+.header-login-signup .header-nav-item {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: max-content;
 }
 
 /*  reponsiveness */

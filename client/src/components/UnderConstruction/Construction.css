@@ -1,0 +1,9 @@
+.construction-page {
+    background-color: rgba(0, 0, 0, 0.884);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top:5rem;
+    /* align-items: center; */
+    height: 90vh;
+}

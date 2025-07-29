@@ -37,9 +37,12 @@ const Form3 = () => {
   useEffect(() => {
     const fetchTempUser = async () => {
       try {
-        const response = await fetch("http://localhost:5000/temp-user", {
-          credentials: "include", // Include session cookies
-        });
+        const response = await fetch(
+          `${process.env.REACT_APP_SERVER_URL}/temp-user`,
+          {
+            credentials: "include", // Include session cookies
+          }
+        );
         if (response.ok) {
           const data = await response.json();
           setTempUser(data); // Store temp user data
@@ -71,17 +74,20 @@ const Form3 = () => {
   const handleSubmit = async () => {
     if (validateForm()) {
       try {
-        const response = await fetch("http://localhost:5000/profileSetup", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username: formData.username,
-            password: formData.password,
-          }),
-          credentials: "include", // Include session cookies
-        });
+        const response = await fetch(
+          `${process.env.REACT_APP_SERVER_URL}/profileSetup`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              username: formData.username,
+              password: formData.password,
+            }),
+            credentials: "include", // Include session cookies
+          }
+        );
 
         if (response.ok) {
           navigate("/dashboard"); // Redirect to dashboard after successful sign-up

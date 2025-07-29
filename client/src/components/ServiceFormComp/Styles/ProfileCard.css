@@ -1,229 +1,292 @@
 /* profileCardPreview.css */
 
 .card-preview-container {
-    max-width: 27rem;
-    margin: auto;
-    padding: 1rem;
-    height:max-content;
-    border-radius: 2rem;
-    height: 92%;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.42);
-    position: relative;
-    border-bottom-left-radius: 3rem;
-    border-bottom-right-radius: 3rem;
-  }
-  
-  .card-header {
-    display: flex;
-    padding-top: 1.25rem;
-    align-items: center;
-  }
-  
-  .card-image-wrapper {
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid #7CE605;
-  }
-  
-  .card-profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .card-header-info {
-    margin-left: 1rem;
-  }
-  
-  .card-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-  
-  .card-profession {
-    font-size: 1.125rem;
-  }
-  
-  .card-location {
-    font-size: 0.75rem;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
-    display: flex;
-    align-items: center;
-    margin-top: 0.25rem;
-  }
-  
-  .location-icon {
-    font-size: 0.875rem;
-    margin-right: 0.25rem;
-  }
-  
-  .card-company {
-    font-size: 0.875rem;
-    color: #4b5563;
-    margin-top: 0.5rem;
-  }
-  
-  .card-service-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 0.75rem;
-    font-size: 0.75rem;
-  }
-  
-  .card-service-tag {
-    background-color: #cffafe;
-    border: 1px solid #22d3ee;
-    padding: 0.125rem 0.5rem;
-    border-radius: 9999px;
-    color: black;
-  }
-  
-  .card-about-section {
-    background-color: #f9fafb;
-    padding: 0.75rem;
-    border-radius: 0.75rem;
-    margin-top: 1rem;
-    color: #374151;
-    font-size: 0.875rem;
-  }
-  
-  .card-about-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .card-about-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    font-size: 0.875rem;
-  }
-  
-  .card-weekend-availability {
-    background-color: #dcfce7;
-    color: #7CE605;
-    padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-  
-  .card-experience {
-    background-color: #f3f4f6;
-    padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-  
-  .card-rating-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    font-size: 0.875rem;
-  }
-  
-  .card-rating-info {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .card-rating-number {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-  
-  .card-stars {
-    display: flex;
-    color: #facc15;
-  }
-  
-  .star-icon-filled {
-    opacity: 1;
-  }
-  
-  .star-icon-empty {
-    opacity: 0.3;
-  }
-  
-  .card-review-text {
-    color: #9ca3af;
-    font-size: 0.75rem;
-  }
-  
-  .card-quote-button {
-    background-color: #7CE605;
-    color: white;
-    padding: 0.25rem 1rem;
-    border-radius: 9999px;
-    font-size: 0.875rem;
-  }
-  
-  .card-footer {
-    position: relative;
-    margin: -1rem;
-    margin-top: 1rem;
-  }
-  
-  .card-footer-image {
-    width: 100%;
-    height:8rem;
-    object-fit:contain;
-    margin:0;
-  }
-  
-  .card-footer-actions {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    padding: 2rem 2rem;
-    font-size: 0.75rem;
-    gap:1rem;
-    color: white;
-  }
-  
-  .card-action {
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-    border: none;
-    align-items: center;
-    color:white;
-  }
-  
-  .card-action-icon {
-    font-size: 1.125rem;
-  }
-  
-  .card-phone-icon {
-    position: absolute;
-    left: 50%;
-    top:2rem;
-    transform: translateX(-50%);
-    background-color: #84cc16;
-    padding: 0.5rem;
-    border-radius: 9999px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-  }
-  
-  .phone-icon {
-    font-size: 1.25rem;
-    color: black;
-  }
-  
+  max-width: 27rem;
+  margin: auto;
+  padding: 1rem;
+  height: max-content;
+  border-radius: 2rem;
+  height: 92%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.42);
+  position: relative;
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+}
+
+.card-header {
+  display: flex;
+  width: 50%;
+  /* padding-top: 1.25rem; */
+  align-items: center;
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 4px solid #7CE605;
+}
+
+
+.card-profile-image {
+  width: 20rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.card-header-info {
+  /* max-width: 30%; */
+  width: 100%;
+  margin-left: 1rem;
+}
+
+.card-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  max-width: 150px;
+  /* restrict width so it doesn’t overflow */
+  word-wrap: break-word;
+  /* allow breaking long words */
+  white-space: normal;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  /* auto adjust */
+  /* ensure wrapping */
+}
+
+.card-profession {
+  font-size: 1.125rem;
+}
+
+.card-location {
+  font-size: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.location-icon {
+  font-size: 0.875rem;
+  margin-right: 0.25rem;
+}
+
+.card-company {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+.card-service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+}
+
+.card-service-tag {
+  background-color: #cffafe;
+  border: 1px solid #22d3ee;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  color: black;
+}
+
+.card-about-section {
+  background-color: #f9fafb;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  margin-top: 1rem;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.card-about-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-about-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.card-weekend-availability {
+  background-color: #dcfce7;
+  color: #7CE605;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.card-experience {
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.card-rating-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.card-rating-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-rating-number {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-stars {
+  display: flex;
+  color: #facc15;
+}
+
+.star-icon-filled {
+  opacity: 1;
+}
+
+.star-icon-empty {
+  opacity: 0.3;
+}
+
+.card-review-text {
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
+.card-quote-button {
+  background-color: #7CE605;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.card-footer {
+  position: relative;
+  margin: -1rem;
+  margin-top: 1rem;
+}
+
+.card-footer-image {
+  width: 100%;
+  height: 8rem;
+  object-fit: contain;
+  margin: 0;
+}
+
+.card-footer-actions {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 2rem 2rem;
+  font-size: 0.75rem;
+  gap: 1rem;
+  color: white;
+}
+
+.card-action {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  color: white;
+}
+
+.card-action-icon {
+  font-size: 1.125rem;
+}
+
+.card-phone-icon {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  transform: translateX(-50%);
+  background-color: #84cc16;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.phone-icon {
+  font-size: 1.25rem;
+  color: black;
+}
+
+/* card image adjust */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  width:max-content;
+  height: 100%;
+  height:max-content;
+  gap: 1rem;
+  /* space between image and text */
+}
+
+.card-image-wrapper {
+  flex-shrink: 0;
+  /* prevent shrinking */
+  width: 90px;
+  /* increase container size */
+  height: 90px;
+  border-radius: 50%;
+  /* keep it circular */
+  overflow: hidden;
+  border: 2px solid #ddd;
+}
+
+.card-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ensures image covers without distortion */
+}
+
+/* Adjust text so it doesn’t dominate the image */
+.card-header-info {
+  flex: 1;
+}
+
+.card-name {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  /* scale with screen size */
+  word-wrap: break-word;
+}
+
+.card-profession,
+.card-location {
+  font-size: 0.9rem;
+  color: #555;
+}

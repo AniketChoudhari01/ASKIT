@@ -42,9 +42,13 @@ function Login({ onClose }) {
 
     // console.log("in api route client side", data);
     try {
-      const response = await axios.post("http://localhost:5000/login", data, {
-        withCredentials: true, // Include cookies in the request
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/login`,
+        data,
+        {
+          withCredentials: true, // Include cookies in the request
+        }
+      );
 
       if (response.status === 200) {
         toast.success(response.data.message || "Login successful!");
@@ -70,7 +74,10 @@ function Login({ onClose }) {
             <h1 className="login-title">Log in to your account</h1>
             <p className="login-subtitle">Welcome back !!!</p>
             {/* <button className="login-google-btn"> */}
-            <a href="http://localhost:5000/google" className="login-google-btn">
+            <a
+              href={`${process.env.REACT_APP_SERVER_URL}/google`}
+              className="login-google-btn"
+            >
               <svg
                 style={{ height: "20px", width: "20px" }}
                 viewBox="0 0 40 40"

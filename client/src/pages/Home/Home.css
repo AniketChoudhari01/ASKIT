@@ -96,12 +96,18 @@ h1 {
     font-size: 1rem;
 }
 
-/* .home-search-button {
+.home-search-bar .home-search-button {
     background: #7CE605;
     border: none;
-    border-radius: 10rem;
+    font-size: larger;
+    border-radius: 3rem;
+    padding: 0.1rem 0.4rem;
     cursor: pointer;
-} */
+}
+
+.home-search-bar .home-search-button:hover {
+    background-color: #7de605eb;
+}
 
 /* Service Cards styles */
 .home-service-cards {
@@ -663,7 +669,7 @@ h1 {
     }
 
     .home-review-content {
-        max-width:90%;
+        max-width: 90%;
         margin: auto;
         text-align: center;
     }

@@ -39,9 +39,10 @@ import ErrorPage from "./pages/Error/Error.js";
 import FAQ from "./pages/FAQ/Faq.js";
 import HowToVideos from "./components/HowToVideos/HowToVideos.js";
 import ScrollToTop from "./components/ScrollToTop.js";
+import Construction from "./components/UnderConstruction/Construction.js"
 function AppContent() {
   const location = useLocation();
-  const noNavbarRoutes = ["/signin2"];
+  const noNavbarRoutes = ["/signin2", "/signup","/signup/email", "/login"];
   const hideNavbar = noNavbarRoutes.includes(location.pathname);
   return (
     <>
@@ -77,13 +78,14 @@ function AppContent() {
         <Route path="/email-verification" element={<Email_verification />} />
         <Route path="/signup/complete" element={<Almost_there />} />
         <Route path="/profile-div" element={<Profile />} />
-        <Route path="/profile/manage" element={<ProfileManage/>}/>
+        <Route path="/profile/manage" element={<ProfileManage />} />
         {/* service provider */}
         <Route path="/signup/basic-info" element={<StepTwo />} />
         <Route path="/signup/service-form" element={<ServiceForm />} />
         <Route path="/faqs" element={<FAQ />} />
         {/* how to videos */}
         <Route path="/how-to-videos" element={<HowToVideos />} />
+        <Route path="/under-construction" element={<Construction />} />
 
         {/* wildcard default route if nothing above matches */}
         <Route path="*" element={<ErrorPage />} />
