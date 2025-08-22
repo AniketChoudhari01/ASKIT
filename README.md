@@ -1,4 +1,4 @@
-# AskIT!
+# AskIT
 
 ## 📝 Description
 **AskIT** is an innovative startup platform designed to seamlessly connect clients with skilled service providers. The platform simplifies the process of finding trusted experts or offering services, making interactions quick, reliable, and hassle-free.
