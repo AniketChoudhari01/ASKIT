@@ -1,0 +1,422 @@
+.verify-container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.verify-left-section {
+    flex: 1;
+    background-color: #e6f0fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verify-background-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.verify-right-section {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.verify-form {
+    width: 40%;
+}
+
+.verify-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.verify-form-group {
+    width: 100%;
+}
+
+.verify-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.verify-mobile-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.verify-country-code {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 15%;
+}
+
+.verify-phone-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.verify-phone-disabled {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.verify-button {
+    padding: 10px 20px;
+    width: 25%;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.verify-button:hover {
+    background-color: #357abd;
+}
+
+.verify-button:disabled {
+    background-color: #34a853;
+    cursor: not-allowed;
+}
+
+.verify-button-verified {
+    background-color: #34a853;
+}
+
+.verify-or-separator {
+    text-align: center;
+    color: #666;
+    margin: 10px 0;
+}
+
+.verify-google-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.verify-email-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.verify-terms {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.verify-signin-link {
+    font-size: 12px;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.verify-button-group-ver {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.verify-button-group-hor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.verify-home-button {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.verify-complete-button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Form */
+.form2-form {
+    width: 100%;
+    max-width: 500px;
+    padding:10px 30px;
+    border-radius: 8px;
+}
+
+.form2-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #212529;
+    text-align: center;
+    /* margin-bottom: 20px; */
+}
+
+.form2-title span{
+    font-style: italic;
+}
+
+/* Inputs */
+.form2-input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.form2-input-group-password {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.form2-input-box {
+    width: 100%;
+}
+
+.form2-input-with-button {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.form2-input-with-button-in-google-signup input{
+    width: 100%;
+}
+
+.form2-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.form2-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.form2-input-email {
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.form2-input:focus {
+    border-color: #000000;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.form2-input-disabled {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+/* Buttons */
+.form2-button {
+    background-color: #000000;
+    width: 25%;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form2-button:hover {
+    background-color: #333333;
+}
+
+.form2-button-verified {
+    background-color: #28a745;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.form2-button-verified::before {
+    content: '✔';
+    font-size: 14px;
+}
+
+.form2-button-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form2-button-primary:hover {
+    background-color: #333333;
+}
+
+/* Checkbox */
+.form2-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.form2-checkbox-group a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.form2-checkbox-group a:hover {
+    color: #333333;
+}
+
+/* Sign-in */
+.form2-signin {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.form2-signin a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.form2-signin a:hover {
+    color: #333333;
+}
+
+.required_span {
+    color: red
+}
+
+.verify-container {
+    overflow: hidden;
+}
+
+.verify-container .verify-form {
+    margin: 2rem;
+    height: 80vh;
+}
+
+/* in form2.js */
+/* Back button styling */
+.back-button {
+    align-self: flex-start;
+    border: 1px solid #e5e5e5;
+    border-radius: 50%;
+    padding: 0.75rem;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    background-color: #f9f9f9;
+}
+
+.form2_container {
+    height: 90vh;
+}
+
+
+/* style for eye icons */
+.form2-password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form2-password-wrapper input {
+    width: 100%;
+    padding-right: 40px;
+    /* space for the eye icon */
+    box-sizing: border-box;
+}
+
+.form2-eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #555;
+}
+
+.form2-header{
+    padding:0.5rem;
+    font-size:1rem;
+    color:#666;
+}
+
+.start-over-span{
+    /* color: #0d29ff; */
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    /* margin-top: 10px; */
+    text-align: center;
+}

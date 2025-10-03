@@ -1,0 +1,260 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(255, 254, 254);
+    color: white;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 55vh;
+    background-color: #F3FAFF;
+}
+
+.img-wrapper img {
+    width: max-content;
+    object-fit: contain;
+    height: 55vh;
+    width: 100%;
+}
+
+.query-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    gap: 2rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+}
+
+.card {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 2rem;
+    gap: 0.5rem;
+    width: 15rem;
+    object-fit: contain;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+    color: #707070;
+}
+
+.card img {
+    width: 7rem;
+    height: 7rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 8px rgba(8, 8, 8, 0.877);
+}
+
+.user-faq-results {
+    display: flex;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+}
+
+/* ask a question */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.form-container {
+    background-color: #f8f8f8;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 70%;
+    /* set a limit */
+}
+
+.left-side h1 {
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.left-side img {
+    width: fit-content;
+    height: fit-content;
+    object-fit: contain;
+}
+
+.ask-form {
+    max-width: 40rem;
+    width: 30rem;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    text-align: left;
+    flex: 1;
+}
+
+.radio-labels {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.full {
+    width: 100%;
+}
+
+input,
+textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.role-select {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.role-select label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 6px;
+}
+
+.role-select input {
+    accent-color: #7CE605;
+}
+
+.ask-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.ask-btn:hover {
+    background-color: #2179e5;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+@media (max-width:426px) {
+    .query-card {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .user-container {
+        margin-bottom: 3rem;
+
+    }
+
+    /* Default layout */
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    /* Left and right side */
+    .left-side {
+        flex: 1;
+        text-align: center;
+    }
+
+    .left-side img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .right-side {
+        flex: 1;
+    }
+
+    /* ✅ Responsive for small screens */
+    @media (max-width: 426px) {
+        .form-container {
+            flex-direction: column;
+            /* Stack vertically */
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .left-side h1 {
+            font-size: 1.5rem;
+            /* Scale heading */
+        }
+
+        .left-side img {
+            width: 80%;
+            max-width: 250px;
+            /* Prevent image overflow */
+            margin: 0 auto;
+            display: block;
+        }
+
+        .right-side {
+            width: 100%;
+        }
+
+        .ask-form {
+            width: 100%;
+        }
+        .form-row{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

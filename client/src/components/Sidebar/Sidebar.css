@@ -1,0 +1,103 @@
+/* User section */
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+.sidebar-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #7CE605;
+}
+
+.sidebar-user-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #7CE605;
+}
+
+.sidebar-user-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* Overlay for sidebar */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    transition: left 0.3s ease;
+    z-index: 2000;
+}
+
+/* Sidebar panel */
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background: #111;
+    color: white;
+    padding: 20px;
+    border-right: 2px solid #7CE605;
+    position: relative;
+}
+
+/* Open state */
+.sidebar-overlay.open {
+    left: 0;
+}
+
+/* Close icon */
+.close-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 60px 10px;
+}
+
+.sidebar-menu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.sidebar-menu li:hover {
+    color: #7CE605;
+}
+
+/* Hamburger button */
+.hamburger-btn {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: #7CE605;
+    cursor: pointer;
+}
+
+/* ✅ Only show hamburger & sidebar on small screens */
+@media (max-width: 426px) {
+    .hamburger-btn {
+        display: block;
+    }
+
+    .header-navbar-right,
+    .header-navbar-center {
+        display: none;
+    }
+}

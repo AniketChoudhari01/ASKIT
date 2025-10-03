@@ -185,3 +185,11 @@
 
     }
 }
+
+@media (max-width:426px) {
+    .card-card{
+        width: 100%;
+        max-width: 90%;
+        margin-top: 0;
+    }
+}

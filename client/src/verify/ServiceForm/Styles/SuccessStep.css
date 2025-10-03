@@ -1,0 +1,116 @@
+.success-step-container {
+  display: flex;
+  /* gap: 2rem; */
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  background-color: none;
+  /* flex-wrap: wrap; */
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.left-panel {
+  flex: 1;
+  max-width: 40%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: start;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+  background-color: black;
+}
+
+.left-panel h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.left-panel p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.left-panel h5 {
+  color: #7CE605;
+}
+
+.left-panel img {
+  width: 40%;
+  height: 30%;
+  margin: 0.5rem auto;
+  display: block;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0.5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  /* Allow glow to spill outside */
+}
+
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  /* Increase size for strong outside glow */
+  height: 10rem;
+  border-radius: 100% 0 0 0;
+  top: -10px;
+  /* Move glow further above */
+  left: -80px;
+  /* Move glow further to the left */
+  background: radial-gradient(circle at 100% 100%, #404852 0%, #31456f 100%);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.image-wrapper img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left-panel .request-btn {
+  background-color: black;
+  border: 2px solid #7CE605;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  border-radius: 3rem;
+  ;
+}
+
+.right-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 70%;
+  background-image: url("../../../Assets/verify/success_bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem;
+}
+
+.img-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,291 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.signin1-container {
+    display: flex;
+    height: 90vh;
+    font-family: Arial, sans-serif;
+}
+
+.left,
+.right {
+    width: 50%;
+    height: 100vh;
+}
+
+.left img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.right {
+    flex: 1;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.right h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.right p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    max-width: 400px;
+    color: #555;
+}
+
+.right label {
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-block;
+    color: #666;
+}
+
+.right label span {
+    color: red;
+}
+
+.right input {
+    height: 44.8px;
+    /* padding: 10px; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
+    /* margin: 0.5rem 0; */
+}
+
+.right input::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.right img[alt="Verify button"] {
+    border-radius: 5rem;
+    /* height: 34.7px; */
+    width: 116.3px;
+    cursor: pointer;
+    /* margin-bottom: 15px; */
+}
+
+.verify-or-separator {
+    text-align: center;
+    color: #666;
+    margin: 15px 0;
+    width: 392.2px;
+}
+
+.right .login-google-btn,
+.right .login-email-btn {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    width: 392.2px;
+    padding: 12px;
+    border: none;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.right .login-google-btn:hover,
+.right .login-email-btn:hover,
+.right .verify-home-button {
+    background-color: #979797;
+}
+
+
+.right #terms {
+    color: #666;
+    font-size: 13px;
+    max-width: 390px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.right #terms a {
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.verify-button-group-hor {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    width: 392.2px;
+}
+
+.verify-button-group-hor button {
+    border-radius: 3rem;
+    border: none;
+    cursor: pointer;
+    /* background-color: #007bff;
+    color: white; */
+    flex: 1;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    height: 3rem;
+    margin: 1rem 0;
+}
+
+.verify-button-group-hor :hover {
+    background-color: #2f2f2f;
+}
+
+.verify-button-group-hor .verify-home-button,
+.right .login-email-btn {
+    border: 2px solid #ccc;
+    background-color: white;
+    color: black;
+}
+
+
+.input-verify {
+    display: flex;
+    align-items: flex-start;
+    background-Color: transparent;
+    border: none;
+    flex-direction: row;
+    gap: 2rem;
+    margin: 0.5rem 0;
+    width: 392.2px;
+}
+
+.input-verify a {
+    cursor: pointer;
+}
+
+#verify-img {
+    display: flex;
+    align-items: center;
+    background-Color: black;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 3rem;
+}
+
+.forgot {
+    text-decoration: none;
+    color: #666;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.right .input-space input {
+    width: 399.2px;
+}
+
+/* for password width */
+.form2-input-group-password {
+    width: 392.2px
+}
+
+.input-verify {
+    position: relative;
+}
+
+.verify-phone-input {
+    width: 100%;
+    padding-right: 40px;
+    /* Make room for the icon */
+    box-sizing: border-box;
+}
+
+.form2-eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.input-verify-width {
+    width: 100%;
+}
+
+.input-verify-width input {
+    width: 392.2px;
+}
+
+
+
+.right-reset {
+    padding: 40px;
+}
+
+.right-recover {
+    padding: 100px 40px;
+}
+
+/* mobile otp verification */
+.mobile-verify {
+    /* height:95vh; */
+    padding: 2rem 1rem;
+}
+
+/* account recovery otptions */
+.right-recover p {
+    white-space: nowrap;
+}
+
+.get-help-update-button-group {
+    display: flex;
+    justify-content: flex-end;
+    width: 58%;
+    margin: 1rem 0;
+}
+
+.get-help-update-button-group button {
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    color: black;
+    padding: 0.5rem 2.5rem;
+    background: white;
+    border-radius: 3rem;
+    border: 2px solid #ccc;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    height: 3rem;
+}
+
+.get-help-update-button-group button:hover {
+    background-color: #bbbaba;
+}
+
+/* reset button margin */
+.update-btn button {
+    color: white;
+    background: black;
+
+}
+
+/* almost there */
+.almost-there-img {
+    background-color: #DAE3FE;
+    padding: 1rem 0;
+}
+
+/* throw errors */
+.right .error-message {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
