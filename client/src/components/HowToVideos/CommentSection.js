@@ -48,6 +48,7 @@ const CommentSection = ({ videoId }) => {
   };
   const handleReplySubmit = async (reply) => {
     try {
+      console.log("reply in section ", reply);
       await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/api/comments/reply`,
         reply

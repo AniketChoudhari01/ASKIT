@@ -234,7 +234,10 @@ function Faq() {
             {currentCards.length > 0 ? (
               <FAQAccordion faqs={currentCards} />
             ) : (
-              <p className="no-results">No results found for search</p>
+              <p className="no-results">
+                We couldn’t find any results matching your search. Please try
+                different keywords or locations.
+              </p>
             )}
           </div>
 

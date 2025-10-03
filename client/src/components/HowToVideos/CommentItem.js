@@ -75,15 +75,18 @@ const CommentItem = ({ comment, onReply, currentUser, fetchComments }) => {
     }
   };
 
+  console.log("user id in comment item ", currentUser._id);
   const handleReply = () => {
-    if (!replyText.trim()) return;
-    let finalReplyText = "";
-    if (comment._id) {
-      finalReplyText = `@${comment.user || "user"}: ${replyText.trim()}`;
-    } else {
-      finalReplyText = replyText.trim();
+    if (!currentUser || !currentUser._id) {
+      toast.warn("Please login to reply.");
+      return;
     }
-    // console.log("final reply text", finalReplyText);
+    if (!replyText.trim()) return;
+
+    const finalReplyText = comment._id
+      ? `@${comment.user || "user"}: ${replyText.trim()}`
+      : replyText.trim();
+
     const newReply = {
       parentId: comment._id,
       videoId: comment.videoId,
@@ -96,6 +99,7 @@ const CommentItem = ({ comment, onReply, currentUser, fetchComments }) => {
     setReplyText("");
     setShowReplyBox(false);
   };
+
   const openEdit = (comment) => {
     if (!currentUser || !currentUser._id || !comment._id) {
       return toast.warn("Comment not found or user not logged in.");

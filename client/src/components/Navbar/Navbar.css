@@ -14,8 +14,9 @@
 
 .header-nav-item {
 	position: relative;
-	padding: 10px 20px;
+	padding: 0.1rem 0.2rem;
 	cursor: pointer;
+	width: max-content;
 	text-align: center;
 	display: flex;
 	align-items: center;
@@ -37,30 +38,6 @@
 	text-align: center;
 	white-space: nowrap;
 }
-
-.header-login-signup {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-	width: max-content;
-}
-
-.header-login-signup button {
-	padding: 0.3rem 0.5rem;
-	font-size: medium;
-}
-
-
-.header-login-signup .login-btn {
-	border: 1px solid #7CE605;
-	background-color: black;
-	color: white;
-	border-radius: 3rem;
-}
-
-/* .header-login-signup .login-btn:hover {
-	background-color: rgb(49, 49, 49);
-} */
 
 .header-nav-item.active .header-popup-box {
 	display: block;
@@ -203,8 +180,8 @@
 	background-color: #7CE605;
 	color: #000;
 	border: none;
-	border-radius: 3rem;
-	padding: 0.3rem 0.7rem;
+	border-radius: 25px;
+	padding: 10px 20px;
 	cursor: pointer;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 	transition: transform 0.2s, box-shadow 0.2s;
@@ -484,224 +461,14 @@
 }
 
 .verify-popup-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.708);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 1001;
-	transition: opacity 0.2s ease;
-}
-
-/* eye slash */
-body.login-active {
-	overflow: hidden;
-	/* Disable scrolling */
-}
-
-.form2-password-wrapper {
-	position: relative;
-	display: flex;
-	align-items: center;
-}
-
-.form2-password-wrapper input {
-	width: 100%;
-	padding-right: 40px;
-	/* Space for the eye icon */
-	box-sizing: border-box;
-}
-
-.form2-eye-icon {
-	position: absolute;
-	right: 10px;
-	top: 50%;
-	/* Center vertically */
-	transform: translateY(-50%);
-	cursor: pointer;
-	color: #555;
-	font-size: 18px;
-}
-
-
-/* user profile button */
-.header-user-profile {
-	display: flex;
-	align-items: center;
-	gap: 5px;
-	color: #ffffff;
-	text-decoration: none;
-	flex-direction: row;
-	font-size: 14px;
-	padding: 0.5rem 0.8rem;
-	border-radius: 3rem;
-	border: 1px solid #7CE605;
-	background: #000;
-	cursor: pointer;
-}
-
-.header-user-photo img {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-}
-
-.header-user-profile:hover {
-	border: 1px solid white;
-}
-
-/* .header-user-info{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 5px;
-} */
-
-/* Navbar.css */
-
-.header-user-right {
-	margin-left: 0.5rem;
-	color: #fff;
-	font-size: 0.9rem;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-}
-
-.header-user-underline {
-	background-color: #7CE605;
-	width: 3rem;
-	margin: 0.1rem 0;
-	height: 2px;
-	border: none;
-}
-
-.profile-overlay {
-	position: fixed;
-	/* top: 5rem; */
-	width: 25rem;
-	/* adjust according to navbar height */
-	top: 5rem;
-	right: 0.009rem;
-	z-index: 1000;
-	border-radius: 1.5rem;
-}
-
-/* Icon styling */
-.btn-icon {
-	background: #7CE605;
-	color: black;
-	margin-right: 0.2rem;
-	font-size: 24px;
-	border-radius: 10rem;
-	padding: 0.1rem;
-	flex-shrink: 0;
-}
-
-/*  reponsiveness */
-/* ✅ Base styles remain unchanged */
-
-/* ✅ RESPONSIVE STYLES */
-@media (max-width: 768px) {
-	.header-navbar {
-		padding: 0 1rem;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-
-	.header-logo {
-		font-size: 24px;
-	}
-
-	.header-navbar-center {
-		order: 3;
-		width: 100%;
-		margin-top: 10px;
-		justify-content: center;
-	}
-
-	.header-search-wrapper {
-		max-width: 100%;
-		border-radius: 30px;
-		padding: 5px;
-	}
-
-	.header-search-box {
-		gap: 10px;
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-
-	.header-search-box input {
-		max-width: 100%;
-		font-size: 14px;
-	}
-
-	.header-navbar-right {
-		order: 2;
-		gap: 10px;
-		flex-wrap: wrap;
-	}
-
-	.header-nav-item {
-		padding: 5px 10px;
-		font-size: 12px;
-	}
-
-	.header-login-signup button {
-		font-size: 12px;
-		padding: 0.2rem 0.4rem;
-	}
-
-	.header-user-profile {
-		padding: 0.3rem 0.5rem;
-		font-size: 12px;
-		gap: 3px;
-	}
-
-	.header-user-photo img {
-		width: 30px;
-		height: 30px;
-	}
-
-	.header-popup-box {
-		left: 0;
-		transform: none;
-		width: 90vw;
-		margin: 5px auto;
-		border-radius: 10px;
-	}
-}
-
-/* ✅ Even smaller devices (max-width: 480px) */
-@media (max-width: 480px) {
-	.header-navbar {
-		padding: 0.5rem;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	.header-navbar-center {
-		order: 2;
-		margin: 10px 0;
-	}
-
-	.header-navbar-right {
-		order: 3;
-		justify-content: flex-start;
-		width: 100%;
-	}
-
-	.header-login-signup {
-		width: 100%;
-		justify-content: space-between;
-	}
-
-	.header-search-wrapper {
-		width: 100%;
-	}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.708);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
 }

@@ -96,12 +96,18 @@ h1 {
     font-size: 1rem;
 }
 
-/* .home-search-button {
+.home-search-bar .home-search-button {
     background: #7CE605;
     border: none;
-    border-radius: 10rem;
+    font-size: larger;
+    border-radius: 3rem;
+    padding: 0.1rem 0.4rem;
     cursor: pointer;
-} */
+}
+
+.home-search-bar .home-search-button:hover {
+    background-color: #7de605eb;
+}
 
 /* Service Cards styles */
 .home-service-cards {
@@ -468,153 +474,6 @@ h1 {
     border-radius: 10rem;
     padding: 0.5rem;
     flex-shrink: 0;
-}
-
-/* Enhaced the UI to modern UI/UX */
-/* ---- Service Cards Modern Look ---- */
-.home-service-cards {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 4rem 2rem;
-    gap:1rem;
-    background-color: #ffffff;
-}
-
-.home-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 45%;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    padding: 2rem;
-    margin: 1rem auto;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    backdrop-filter: blur(10px);
-}
-
-.home-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.home-btn {
-    background: linear-gradient(135deg, #7ce605, #44d62c);
-    color: #000;
-    padding: 12px 26px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.home-btn:hover {
-    background: linear-gradient(135deg, #28a828, #7ce605);
-    transform: scale(1.05);
-}
-
-/* ---- Features Section Modern ---- */
-.home-features-section {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #f4faff, #ffffff);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.home-features {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin: 3rem 0;
-    flex-wrap: wrap;
-}
-
-.home-feature {
-    background: #fff;
-    border-radius: 20px;
-    padding: 2rem;
-    text-align: center;
-    width: 280px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    /* cursor: pointer; */
-}
-
-.home-feature img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1rem;
-    transition: transform 0.4s ease;
-}
-
-.home-feature:hover {
-    /* transform: translateY(-8px); */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.home-feature:hover img {
-    transform: scale(1.1);
-}
-
-/* ---- Quick Video Section ---- */
-.home-quick-video-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background: #f9f9f9;
-    border-radius: 16px;
-    padding: 2rem;
-    gap: 2rem;
-    transition: box-shadow 0.3s ease;
-}
-
-.home-video-thumbnail img {
-    max-width: 100%;
-    border-radius: 16px;
-    transition: transform 0.3s ease;
-}
-
-.home-quick-video-section:hover .home-video-thumbnail img {
-    /* transform: scale(1.05); */
-}
-
-/* ---- Stats Section ---- */
-.home-stats-section {
-    background: linear-gradient(135deg, #fefefe, #f5faff);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    border-radius: 16px;
-    margin: 2rem 5rem;
-    padding: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-}
-
-.home-stat {
-    background-color: #fff;
-    padding: 1.2rem 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.home-stat:hover {
-    /* transform: scale(1.05); */
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-}
-
-/* ---- Review Section ---- */
-.home-review-content {
-    background: linear-gradient(135deg, #e5e7fe, #f5f7ff);
-    border-radius: 24px;
-    padding: 3rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* ✅ Mobile Responsive Styles */

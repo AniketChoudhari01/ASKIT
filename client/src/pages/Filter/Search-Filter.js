@@ -141,7 +141,10 @@ export const Filter = () => {
           {currentCards.length > 0 ? (
             currentCards.map((item, index) => <Card key={index} data={item} />)
           ) : (
-            <p className="no-results">No results found for search</p>
+            <p className="no-results">
+              We couldn’t find any results matching your search. Please try
+              different keywords or locations.
+            </p>
           )}
         </div>
 

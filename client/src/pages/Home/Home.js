@@ -52,9 +52,10 @@ const Home = () => {
               className="home-search-button"
               onClick={() => navigate("/Search")}
             >
-              <span className="icon-container">
+              {/* <span className="icon-container">
                 <IoSearchOutline className="btn-icon" />
-              </span>
+              </span> */}
+              Search
             </button>
           </div>
         </div>
@@ -93,7 +94,8 @@ const Home = () => {
             <div className="home-card-bottom">
               <button
                 className="home-btn"
-                onClick={() => navigate("/Consumer-Signup")}
+                // onClick={() => navigate("/Consumer-Signup")}
+                onClick={() => navigate("/under-construction")}
               >
                 Get Started ↗
               </button>

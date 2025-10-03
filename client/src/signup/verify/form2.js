@@ -40,7 +40,7 @@ const Form2 = () => {
 
   const verifyOTP = async (email, otp) => {
     try {
-      const response = await fetch("http://localhost:5000/verify-otp", {
+      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/verify-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const Form2 = () => {
 
   const sendOTP = async (email) => {
     try {
-      const response = await fetch("http://localhost:5000/send-otp", {
+      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/send-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

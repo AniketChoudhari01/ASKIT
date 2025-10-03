@@ -448,7 +448,7 @@ async function loadCachedFAQs() {
     acc[faq.userType].push(faq);
     return acc;
   }, {});
-  // console.log("FAQS cached in memory");
+  console.log("FAQS cached in memory");
 }
 loadCachedFAQs();
 
@@ -578,7 +578,7 @@ const postComment = async (req, res) => {
 //reply to a comment
 const replyToComment = async (req, res) => {
   try {
-    const { parentId, user, text, videoId } = req.body;
+    const { parentId, user, text, videoId, commentedBy } = req.body;
     if (!parentId || !user || !text || !videoId) {
       return res.status(400).json({ error: "Missing required fields" });
     } //may be user is not login first then sign up
@@ -586,10 +586,12 @@ const replyToComment = async (req, res) => {
       videoId,
       text,
       user,
-      parentId, // This is the ID of the comment being replied to
+      parentId:new mongoose.Types.ObjectId(parentId), // This is the ID of the comment being replied to
+      commentedBy:new mongoose.Types.ObjectId(commentedBy),
       createdAt: new Date(),
     });
     await reply.save();
+    // console.log("in reply back", reply);
     res.status(201).json(reply);
   } catch (error) {
     // console.log("Error in replyToComment:", error);
